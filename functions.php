@@ -125,3 +125,24 @@ function select(string $name, array $days, $user)
     }
     echo "</select>";
 }
+
+function newsletter($data)
+{
+    if (isset($data)) {
+        file_put_contents(__DIR__ . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . date("Ymd"), "$data, ", FILE_APPEND);
+    }
+}
+
+function isAdult(string $cookie_serial): bool
+{
+    $birthdate = unserialize($cookie_serial);
+    $age = (int)date('Y') - (int)$birthdate['year'];
+    if ((int)date('md') < (int)$birthdate['month'] . (int)$birthdate['day']) {
+        $age--;
+    }
+    if ($age < 18) {
+        return false;
+    } else {
+        return true;
+    }
+}
