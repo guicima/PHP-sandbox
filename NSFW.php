@@ -12,7 +12,7 @@ require 'elements' . DIRECTORY_SEPARATOR . 'header.php';
 
 <?php if (!empty($_COOKIE['utilisateur']) && isAdult($_COOKIE['utilisateur'])) : ?>
     <h1>Bienvenue</h1>
-    <a href="profil.php?action=deconnecte">Se deconnecter</a>
+    <a href="NSFW.php?action=deconnecte">Se deconnecter</a>
 <?php elseif (!empty($_COOKIE['utilisateur']) && !isAdult($_COOKIE['utilisateur'])) : ?>
     <h1 class="alert alert-danger">Vous n'etes pas majeur!</h1>
 <?php else : ?>

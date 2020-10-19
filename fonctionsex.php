@@ -17,5 +17,3 @@ while (true) {
         echo "$entry \n";
     }
 }
-
-?>
